@@ -6,10 +6,10 @@ kramdown:
   input:  GFM
   syntax_highlighter: rouge
 
+gems: [jekyll-paginate]
 
-paginate: 10
-paginate_path: ":num"
-baseurl: ""
+paginate: 5
+paginate_path: "page:num"
 
 
 

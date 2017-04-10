@@ -7,7 +7,7 @@ layout: default
   <div class="col-sm-10 col-sm-offset-1 col-lg-9 col-lg-offset-1_5">
       <div>
         <section class="category-slice" post-cate="All">
-          {% for post in site.posts %}
+          {% for post in paginator.posts %}
             <article>
                 <header>
                     <a href="{{ site.baseurl | prepend: site.url  }}/archive/#{{ post.date | date: '%Y-%m-%d' }}"><span class="octicon octicon-calendar"></span>&nbsp;<span>{{ post.date | date: "%Y-%m-%d" }}</span></a>
@@ -44,9 +44,9 @@ layout: default
                       {% if page == paginator.page %}
                         <li class="active"><span>{{ page }}</span></li>
                       {% elsif page == 1 %}
-                        <li><a href="{{ '/' | prepend: site.baseurl | prepend: site.url  }}">{{ page }}</a></li>
+                        <li><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
                       {% else %}
-                        <li><a href="{{ page |  prepend: '/' | prepend: site.baseurl | prepend: site.url }}">{{ page }}</a></li>
+                        <li><a href="/{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
                       {% endif %}
                   {% endfor %}
                   {% if !paginator.next_page %}

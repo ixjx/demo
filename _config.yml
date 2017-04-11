@@ -9,7 +9,7 @@ kramdown:
 gems: [jekyll-paginate]
 
 paginate: 5
-paginate_path: "/demo/page:num"
+paginate_path: "/page:num"
 
 
 
